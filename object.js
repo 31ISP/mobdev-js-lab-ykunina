@@ -7,5 +7,5 @@ const book = {
     info: () => { 
         return `${this.title}, ${this.author}, ${this.year}, ${this.page}. Доступна: ${this.available}` }
 }
-console.log("№1",book.info()) )    
+console.log("№1",book.info())    
 
