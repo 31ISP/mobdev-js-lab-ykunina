@@ -9,4 +9,10 @@ console.log("№2", `Студент: ${name}, группa: ${group}, средн�
 const data = "15-03-2025".split("-")
 console.log("№3", `${data[0]}.${data[1]}.${data[2]}`)      
 
+const razrab = "Node.js разработчик"
+const node = razrab.startsWith("Node")
+const raz = razrab.endsWith("разработчик")
+console.log("№4", "Начинается с  Node =" + node + ", заканчивается на разработчик =" + raz)                                                                // true true
 
+const number = "42"
+console.log("№5", number.padStart(8, "0"))                                                        // 00042
