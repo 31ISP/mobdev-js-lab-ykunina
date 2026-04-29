@@ -23,5 +23,32 @@ const students = [
 let passed = students.filter(student => student.passed === true)
 const passedName = passed.map(student => student.name)
 let bal = students.find(student => student.grade > 4.5)
-const sumbal = students.reduce((sum, student) => sum + student.grade / student.,0 )
-console.log("№3","Сдали:", passedName, "Бал > 4.5:", bal.name)
+const sumbal = students.reduce((sum, student) => sum + student.grade, 0) / students.length
+console.log("№3","Сдали:", passedName, ",Бал > 4.5:", bal.name, ",Средний бал:", sumbal.toFixed(2))
+
+function mergeUsers(user1, user2) {
+    return { ...user1, ...user2 }
+}
+const u1 = { name: "Иван", age: 20, city: "Казань" };
+const u2 = { name: "Иван Петров", email: "ivan@mail.ru", city: "Москва" };
+const mergedUser = mergeUsers(u1, u2);
+console.log("№4", mergedUser)
+
+
+function countByField(arr, field) {
+  return arr.reduce((counter, obj) => {
+    const value = obj[field];
+    
+        if (counter[value] === undefined) {
+      counter[value] = 0;
+    }
+    // Увеличиваем счётчик
+    counter[value]++;
+    
+    return counter;
+  }, {}); 
+}
+
+
+const passedCount = countByField(students, "passed");
+console.log("№5", passedCount)
